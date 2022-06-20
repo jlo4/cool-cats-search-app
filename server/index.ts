@@ -1,9 +1,19 @@
+import * as dotenvConfig from 'dotenv'
+dotenvConfig.config({
+    path: '.env.local'
+})
 import express from 'express'
 const app = express()
-const port = 4000
+const port = process.env.PORT
+import { listAllCats } from './api'
 
-app.get('/', (req, res) => {
-    res.send('Hello from the server')
+const ROUTES = {
+    list: '/list'
+}
+
+app.get(ROUTES.list, async (req, res) => {
+    let cats = await listAllCats()
+    res.json(cats)
 })
 
 app.listen(port, () => {
