@@ -5,11 +5,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the server directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+The default settings run the client app on http://localhost:3000 and the server on http://localhost:4000
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test`
