@@ -7,7 +7,10 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "ts-node index.ts",
     "client": "node start-client.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc-check": "concurrently \"npm run tsc-server\" \"npm run tsc-client\"",
+    "tsc-server": "npx tsc",
+    "tsc-client": "node client-tsc.js"
   },
   "repository": {
     "type": "git",
