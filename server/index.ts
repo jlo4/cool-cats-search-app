@@ -1,10 +1,10 @@
+import 'dotenv/config'
 import express from 'express'
 const app = express()
-const port = 4000
+const port = process.env.PORT
+import {listAllCats} from './api'
 
-app.get('/', (req, res) => {
-    res.send('Hello from the server')
-})
+app.get('/', listAllCats)
 
 app.listen(port, () => {
     console.log(`Server up on port ${port}`)
