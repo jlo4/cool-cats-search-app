@@ -10,7 +10,7 @@ import { getBreedById, listAllBreeds } from './api'
 
 const ROUTES = {
     list: '/list',
-    getBreedById: '/'
+    getBreedById: '/id/:id'
 }
 
 app.get(ROUTES.list, async (req, res) => {
@@ -21,8 +21,8 @@ app.get(ROUTES.list, async (req, res) => {
 app.get(ROUTES.getBreedById, async (req, res) => {
     let breedID: string = ''
     let breed: Breed = {}
-    if (typeof(req.query.id) === "string") {
-        breedID = req.query.id
+    if (typeof(req.params.id) === "string") {
+        breedID = req.params.id
         breed = await getBreedById(breedID)
     }
     res.json(breed)
