@@ -4,8 +4,9 @@
   "description": "An app to list and search for cats using https://api.thecatapi.com",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "ts-node index.ts",
+    "client": "node start-client.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
