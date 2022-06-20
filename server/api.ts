@@ -1,7 +1,10 @@
+import url from 'url'
 import axios from 'axios'
+import { Breed } from '../types'
 
 const ROUTES = {
-    breeds: 'breeds'
+    breeds: 'breeds',
+    search: 'breeds/search'
 }
 
 const getAPIRoute = (): string => {
@@ -23,14 +26,35 @@ const axiosClient = axios.create({
     headers: {'x-api-key': getEnvKey(process.env.CAT_API_KEY)}
 })
 
-export const listAllCats = async () => {
-    let cats = {}
+export const listAllBreeds = async () => {
+    let breeds = {}
     try {
-        const { data } = await axiosClient.get(getAPIRoute() + ROUTES.breeds)           
-        cats = data     
-    } catch {
-        cats = {}
+        const { data } = await axiosClient.get(getAPIRoute() + ROUTES.breeds)
+        breeds = data     
+    } catch (err) {
+        breeds = {}
     } finally {
-        return cats
+        return breeds
+    }
+}
+
+export const getBreedById = async (breedID: string) => {
+    let breed: Breed = {}
+    try {
+        const { data }: {data: Array<Breed>} = await axiosClient.get(getAPIRoute() + ROUTES.search, {
+            params: {
+                q: breedID
+            }
+        })
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].id === breedID) {
+                breed = data[i]
+                break
+            }
+        }
+    } catch (err) {
+        breed = {}
+    } finally {
+        return breed
     }
 }
