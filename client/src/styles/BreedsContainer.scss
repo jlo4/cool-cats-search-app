@@ -5,7 +5,7 @@
     align-content: flex-start;    
     margin: 2vh 2vw;
     width: app.$container-width;
-    height: 90%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     background-color: app.$container-background-color;
@@ -17,6 +17,7 @@
     margin: 2vh 2vw;
     display: flex;
     width: 30%;
+    min-height: 30vh;
     height: 20%;
     background-color: app.$item-background-color;
 }

@@ -1,11 +1,22 @@
 @use 'app';
 $margin-right: 2vw;
-.search-container {
+
+.container {
     align-items: center;
     justify-content: center;
     display: flex;
     margin: 2vh 2vw;
     width: app.$container-width;
+    height: 100%;
+    align-items: center;
+}
+
+.search-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 2vh 2vw;
+    width: 60%;
     height: 20vw;
     align-items: center;
 }
@@ -17,4 +28,17 @@ $margin-right: 2vw;
 
 .search-input {
     width: 40vw;
+}
+
+.selected-page {
+    color: white;
+    background-color: rgb(19, 19, 197);
+    text-decoration: underline;
+    border-radius: 2px;
+}
+
+.page {
+    color: rgb(19, 19, 197);
+    text-decoration: underline;
+    border-radius: 2px;
 }
