@@ -1,11 +1,22 @@
 @use 'app';
 $margin-right: 2vw;
-.search-container {
+
+.container {
     align-items: center;
     justify-content: center;
     display: flex;
     margin: 2vh 2vw;
     width: app.$container-width;
+    height: 20vw;
+    align-items: center;
+}
+
+.search-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 2vh 2vw;
+    width: 60%;
     height: 20vw;
     align-items: center;
 }
