@@ -5,26 +5,34 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 Install packages in client and server folders `npm install`
-Run the project with
+
+The server requires the following environment variables
+`PORT`, `CAT_API_ROUTE=https://api.thecatapi.com/v1/`, and `CAT_API_KEY` which is an API key from [https://thecatapi.com](The Cat API)
+
+Run the project from the main project folder with
 `cd server && npm run start`
 
-## Available Scripts
+## Some useful scripts
 In the server directory, you can run:
 
 ### `npm start`
-
 The default settings run the client app on http://localhost:3000 and the server on http://localhost:4000
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm tsc-check`
+This will run Typescript type checking for both the client and server.
 
 In the client directory, you can run:
+### `npm start`
+
+Launches the client app only. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Project prefers using
+## The project prefers using
 - [x] Typescript
-- [x] ES6
 - [x] Sass
 
 ## Project implements at least the following
