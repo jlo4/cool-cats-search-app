@@ -1,0 +1,22 @@
+@use 'sass:math';
+@use 'App';
+$container-width: 90%;
+
+.breeds-container {
+    align-content: flex-start;    
+    width: $container-width;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: App.$container-background-color;
+}
+
+.breed-item {
+    align-items: flex-start;
+    justify-content: center;
+    margin: 2vh 2vw;
+    display: flex;
+    width: 30%;
+    height: 20%;
+    background-color: App.$item-background-color;
+}
