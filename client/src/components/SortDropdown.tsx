@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { InputLabel, MenuItem, FormControl, Select, SelectChangeEvent } from '@mui/material'
 
 export enum SortValues {

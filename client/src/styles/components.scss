@@ -29,3 +29,16 @@ $margin-right: 2vw;
 .search-input {
     width: 40vw;
 }
+
+.selected-page {
+    color: white;
+    background-color: rgb(19, 19, 197);
+    text-decoration: underline;
+    border-radius: 2px;
+}
+
+.page {
+    color: rgb(19, 19, 197);
+    text-decoration: underline;
+    border-radius: 2px;
+}
