@@ -1,0 +1,20 @@
+@use 'app';
+$margin-right: 2vw;
+.search-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 2vh 2vw;
+    width: app.$container-width;
+    height: 20vw;
+    align-items: center;
+}
+
+.btn-primary {
+    width: 10vw;
+    height: 5vh;
+}
+
+.search-input {
+    width: 40vw;
+}

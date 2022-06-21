@@ -1,14 +1,14 @@
 @use 'sass:math';
-@use 'App';
-$container-width: 90%;
+@use 'app';
 
 .breeds-container {
     align-content: flex-start;    
-    width: $container-width;
+    margin: 2vh 2vw;
+    width: app.$container-width;
     height: 90%;
     display: flex;
     flex-wrap: wrap;
-    background-color: App.$container-background-color;
+    background-color: app.$container-background-color;
 }
 
 .breed-item {
@@ -18,5 +18,5 @@ $container-width: 90%;
     display: flex;
     width: 30%;
     height: 20%;
-    background-color: App.$item-background-color;
+    background-color: app.$item-background-color;
 }
