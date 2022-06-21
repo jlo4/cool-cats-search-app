@@ -1,10 +1,15 @@
 $container-background-color: #767676;
 $item-background-color: #e8e8e8;
+$container-width: 90%;
 
 .App {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     min-height: 100vh;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .App-logo {
@@ -41,4 +46,3 @@ $item-background-color: #e8e8e8;
         transform: rotate(360deg);
     }
 }
-  
