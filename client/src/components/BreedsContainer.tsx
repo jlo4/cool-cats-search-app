@@ -2,6 +2,7 @@ import React from 'react'
 import { distance } from 'fastest-levenshtein'
 import '../styles/breedsContainer.scss'
 import { Breed } from '../../../types'
+import { Button } from '@mui/material'
 
 interface BreedsContainerProps {
     breeds: Breed[]
@@ -14,9 +15,21 @@ const BreedItem = ({breed, id}: {
     breed: Breed,
     id: string
 }) => {
+    const DEFAULT_WIDTH = 150
+    const DEFAULT_HEIGHT = 175
+
+    const handleBreedClick = () => {
+        console.log('breed', breed)
+        window.open(breed.wikipedia_url, '_blank')
+    }
+
     return (
         <div className='breed-item' key={id}>
-            {breed.name.toString()}
+            
+            <Button variant='outlined' color={'info'} className={(breed.wikipedia_url != '' && 'breed-wiki') + ' breed-name'} onClick={() => {if (breed.wikipedia_url != '') { handleBreedClick() }}}>{breed.name.toString()}</Button>
+            <div className={(breed.wikipedia_url != '' && 'breed-wiki') + ' breed-img-div'}>
+                <img className={'breed-img'} width={DEFAULT_WIDTH} height={DEFAULT_HEIGHT} id={breed.image.id} src={breed.image.url} />
+            </div>            
         </div>
     )
 }
