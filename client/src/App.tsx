@@ -10,20 +10,13 @@ import { Breed } from '../../types'
 const DEFAULT_PAGE = 1
 const DEFAULT_PAGE_SIZE = 10
 
-
-function App() {
-  
+function App() {  
   const [loading, setLoading] = useState(true)
   const [breeds, setBreeds] = useState<Breed[]>([])
   const [page, setPage] = useState(DEFAULT_PAGE)
   const [pageSize, setPageSize] = useState(DEFAULT_PAGE_SIZE)
   const [searchValue, setSearchValue] = useState('')
   const [sort, setSortValue] = useState<string>(SortValues.NAME)
-    /*
-  useEffect(() => {
-    setLoading(false)
-  })
-*/
 
   useEffect(() => {    
     const getBreedsList = async () => {

@@ -1,4 +1,3 @@
-import url from 'url'
 import axios from 'axios'
 import { Breed } from '../types'
 
@@ -38,16 +37,16 @@ export const listAllBreeds = async () => {
     }
 }
 
-export const getBreedById = async (breedID: string) => {
+export const getBreedByName = async (breedName: string) => {
     let breed: Breed = {}
     try {
         const { data }: {data: Array<Breed>} = await axiosClient.get(getAPIRoute() + ROUTES.search, {
             params: {
-                q: breedID
+                q: breedName
             }
         })
         for (let i = 0; i < data.length; i++) {
-            if (data[i].id === breedID) {
+            if (data[i].name.toLowerCase().indexOf(breedName.toLowerCase()) > -1) {
                 breed = data[i]
                 break
             }

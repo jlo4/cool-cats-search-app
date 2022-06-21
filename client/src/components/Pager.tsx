@@ -25,7 +25,6 @@ export const Pager = ({page, pageSize, listSize, handleChangePage}: {page: numbe
 
     return (
         <>
-
             {
                 values.length > 0 && values.map((value) => {                    
                     return (                        

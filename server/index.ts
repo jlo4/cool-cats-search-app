@@ -6,11 +6,11 @@ import express from 'express'
 import { Breed } from '../types'
 const app = express()
 const port = process.env.PORT
-import { getBreedById, listAllBreeds } from './api'
+import { getBreedByName, listAllBreeds } from './api'
 
 const ROUTES = {
     list: '/list',
-    getBreedById: '/id/:id'
+    getBreedByName: '/name/:name'
 }
 
 app.get(ROUTES.list, async (req, res) => {
@@ -18,12 +18,12 @@ app.get(ROUTES.list, async (req, res) => {
     res.json(breeds)
 })
 
-app.get(ROUTES.getBreedById, async (req, res) => {
-    let breedID: string = ''
+app.get(ROUTES.getBreedByName, async (req, res) => {
+    let breedName: string = ''
     let breed: Breed = {}
-    if (typeof(req.params.id) === "string") {
-        breedID = req.params.id
-        breed = await getBreedById(breedID)
+    if (typeof(req.params.name) === "string") {
+        breedName = req.params.name
+        breed = await getBreedByName(breedName)
     }
     res.json(breed)
 })

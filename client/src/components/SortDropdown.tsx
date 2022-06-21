@@ -7,7 +7,8 @@ export enum SortValues {
     DOG_FRIENDLISNESS = 'FRIENDLINESS'
 }
 
-export const SortDropdown = ({sortValue, handleSortChange}: { sortValue: string, handleSortChange: any}) => {    
+export const SortDropdown = ({sortValue, handleSortChange}: { sortValue: string, handleSortChange: any}) => {   
+    const STRING_BEGIN = 0 
     const handleChange = (e: SelectChangeEvent) => {
         handleSortChange(e.target.value)
     }
@@ -22,9 +23,9 @@ export const SortDropdown = ({sortValue, handleSortChange}: { sortValue: string,
                     label='Sort by'
                     onChange={handleChange}
                 >
-                    <MenuItem value={SortValues.NAME}>{SortValues.NAME[0].toUpperCase() + SortValues.NAME.slice(1).toLowerCase()}</MenuItem>
-                    <MenuItem value={SortValues.INTELLIGENCE}>{SortValues.INTELLIGENCE[0].toUpperCase() + SortValues.INTELLIGENCE.slice(1).toLowerCase()}</MenuItem>
-                    <MenuItem value={SortValues.DOG_FRIENDLISNESS}>{SortValues.DOG_FRIENDLISNESS[0].toUpperCase() + SortValues.DOG_FRIENDLISNESS.slice(1).toLowerCase()}</MenuItem>
+                    <MenuItem value={SortValues.NAME}>{SortValues.NAME[STRING_BEGIN].toUpperCase() + SortValues.NAME.slice(STRING_BEGIN + 1).toLowerCase()}</MenuItem>
+                    <MenuItem value={SortValues.INTELLIGENCE}>{SortValues.INTELLIGENCE[STRING_BEGIN].toUpperCase() + SortValues.INTELLIGENCE.slice(STRING_BEGIN + 1).toLowerCase()}</MenuItem>
+                    <MenuItem value={SortValues.DOG_FRIENDLISNESS}>{SortValues.DOG_FRIENDLISNESS[STRING_BEGIN].toUpperCase() + SortValues.DOG_FRIENDLISNESS.slice(STRING_BEGIN + 1).toLowerCase()}</MenuItem>
                 </Select>
             </FormControl>        
         </>
