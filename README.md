@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Install packages in client and server folders `npm install`
 
 The server requires the following environment variables
-`PORT`, `CAT_API_ROUTE=https://api.thecatapi.com/v1/`, and `CAT_API_KEY` which is an API key from [https://thecatapi.com](The Cat API)
+`PORT`, `CAT_API_ROUTE=https://api.thecatapi.com/v1/`, and `CAT_API_KEY` which is an API key from [The Cat API](https://thecatapi.com)
 
 Run the project from the main project folder with
 `cd server && npm run start`
