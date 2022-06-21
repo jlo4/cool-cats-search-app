@@ -1,5 +1,6 @@
 import React from 'react'
-import { Breed } from '../../types'
+import '../styles/BreedsContainer.scss'
+import { Breed } from '../../../types'
 
 interface BreedsContainerProps {
     breeds: Breed[]
@@ -12,7 +13,7 @@ const BreedItem = ({breed, key}: {
     key: string
 }) => {
     return (
-        <div key={key}>
+        <div className='breed-item' key={key}>
             {breed.id.toString()}
         </div>
     )

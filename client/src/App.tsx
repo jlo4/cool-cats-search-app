@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import './App.css'
-import { BreedsContainer } from './BreedsContainer'
+import './styles/App.scss'
+import { BreedsContainer } from './components/BreedsContainer'
 import { Breed } from '../../types'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   const [page, setPage] = useState(1)
   const [pageSize, setPageSize] = useState(10)
 
-  useEffect(() => {
+  useEffect(() => {    
     const getBreedsList = async () => {
       const { data } = await axios.get('list') 
       setBreeds(data)      
@@ -24,6 +24,7 @@ function App() {
       .finally(() => {
         setLoading(false)
       })
+           
   }, [])
 
   return (
